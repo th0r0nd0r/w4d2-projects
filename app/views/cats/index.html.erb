@@ -1,0 +1,8 @@
+<h1>ALL TEH CATZ</h1>
+
+<% @cats.each do |cat| %>
+<h3><%= cat.name %></h3>
+<li><%= cat.color %></li>
+<%= link_to 'More on this cat.', cat_url(cat.id) %>
+
+<% end %>
