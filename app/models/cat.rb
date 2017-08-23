@@ -9,4 +9,10 @@ class Cat < ApplicationRecord
   validates :color, inclusion: { in: COLORS.values,
     message: "%{value} is not a valid color" }
   validates :sex, inclusion: { in: %w(M F) }
+
+  has_many :requests,
+    primary_key: :id,
+    foreign_key: :cat_id,
+    class_name: :CatRentalRequest
+
 end
